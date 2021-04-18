@@ -7,3 +7,4 @@ electrumx/*
 lnd-data/*
 indexes/*
 *.logs
+*.log
