@@ -1,5 +1,7 @@
-bitcoin/*
+chainstate/*
+blocks/*
 *.dat
 *.ldb
 __*
 electrumx/*
+lnd-data/*
