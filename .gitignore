@@ -5,3 +5,5 @@ blocks/*
 __*
 electrumx/*
 lnd-data/*
+indexes/*
+*.logs
