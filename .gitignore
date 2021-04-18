@@ -1,4 +1,4 @@
-bitcoinnode/*
+bitcoin/*
 *.dat
 *.ldb
 __*
