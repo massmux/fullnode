@@ -6,5 +6,6 @@ __*
 electrumx/*
 lnd-data/*
 indexes/*
+index/*
 *.logs
 *.log
