@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  core:
+    container_name: core
+    hostname: core
+    image: massmux/bitcoincore
+    environment:
+      - BX_CONFIG=/opt/nodeworkdir/bx.cfg
+    volumes:
+      - ./bitcoinnode:/root/.bitcoin
+      - ./nodeworkdir:/opt/nodeworkdir
+    entrypoint: /root/run.sh
+    working_dir: /opt/nodeworkdir
+    ports:
+      - 18443:18443
+      - 18444:18444
+
+
+  electrumx:
+    container_name: electrumx
+    hostname: electrumx
+    image: lukechilds/electrumx
+    volumes:
+      - ./electrumx:/data
+    environment:
+      - DAEMON_URL=http://bitcoin:8473@core:8332
+      - COIN=BitcoinSegwit
+    links:
+      - core
+    ports:
+      - 50002:50002
